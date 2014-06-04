@@ -39,10 +39,11 @@ def makeplot(plotdata,grid_parameter):
     title=plot_text[0]
     xtitle=plot_text[1]
     ytitle=plot_text[2]
+    line_color=plot_text[3]
 ###
-    plot.title(title)
-    left_axis.set_xlabel(xtitle)
-    left_axis.set_ylabel(ytitle)
+    plot.title(title,fontsize=18)
+    left_axis.set_xlabel(xtitle,fontsize=16)
+    left_axis.set_ylabel(ytitle,fontsize=16)
 #right_axis.set_ylabel()
 ###
 # axis
@@ -76,7 +77,7 @@ def makeplot(plotdata,grid_parameter):
 #       left_axis.grid(which='minor',axis='both')
 ###
 # plot
-        left_axis.plot(plotdata[:,0],plotdata[:,1])
+        left_axis.plot(plotdata[:,0],plotdata[:,1],color=line_color)
 ###
         plot.show()
 ###
