@@ -77,12 +77,11 @@ def makeplot(plotdata,grid_parameter):
 #       left_axis.grid(which='minor',axis='both')
 ###
 # plot
-        left_axis.plot(plotdata[:,0],plotdata[:,1],color=line_color)
-###
-        plot.show()
+    left_axis.plot(plotdata[:,0],plotdata[:,1],color=line_color)
+    plot.show()
 ###
 # save
-        plot.savefig(title)
+    plot.savefig(title)
 #######
 #
 #
