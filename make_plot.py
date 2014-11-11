@@ -78,6 +78,7 @@ def makeplot(plotdata,grid_parameter):
 ###
 # plot
     left_axis.plot(plotdata[:,0],plotdata[:,1],color=line_color)
+    plot.get_current_fig_manager().resize(1024,800)
     plot.show()
 ###
 # save
