@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.02.June.2014
+# rev.17.December.2014
 ########################################################################
 # This function prepares a standard xy line plot.
 # It is set up for a secondary y axis if needed.
@@ -23,12 +23,18 @@
 import numpy
 import matplotlib.pyplot as plot
 from matplotlib.ticker import MultipleLocator
+from win32api import GetSystemMetrics
 #######
 #
 #
 #
 ####### make the plot
 def makeplot(plotdata,grid_parameter):
+###
+# diagnostics
+    matplotlib.rcParams.update({'font size': 18}) #set global plot font
+    width=GetSystemMetrics (0)
+    height=GetSystemMetrics (1)
 ###
 # set up for two y axis
     fig,left_axis=plot.subplots()
@@ -41,9 +47,9 @@ def makeplot(plotdata,grid_parameter):
     ytitle=plot_text[2]
     line_color=plot_text[3]
 ###
-    plot.title(title,fontsize=18)
-    left_axis.set_xlabel(xtitle,fontsize=16)
-    left_axis.set_ylabel(ytitle,fontsize=16)
+    plot.title(title)
+    left_axis.set_xlabel(xtitle)
+    left_axis.set_ylabel(ytitle)
 #right_axis.set_ylabel()
 ###
 # axis
@@ -78,7 +84,9 @@ def makeplot(plotdata,grid_parameter):
 ###
 # plot
     left_axis.plot(plotdata[:,0],plotdata[:,1],color=line_color)
-    plot.get_current_fig_manager().resize(1024,800)
+#
+    plot.get_current_fig_manager().resize(width,height)
+    plot.gcf().set_size_inches((0.01*width),(0.01*height))
     plot.show()
 ###
 # save
