@@ -65,10 +65,11 @@ fig,left_axis=plot.subplots()
 # plot text
 #
 plot_text=numpy.loadtxt('plot_labels.inp',dtype=str,delimiter='\n')
+curve_text=numpy.loadtxt('curve_labels.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
 ytitle=plot_text[2]
-line_color=plot_text[3]
+line_color0=plot_text[3]
 #
 plot.title(title)
 left_axis.set_xlabel(xtitle)
@@ -112,19 +113,24 @@ left_axis.grid(which='minor',axis='both')
 #
 #######
 #
-# plot
+# plot diagnostics
 #
-left_axis.plot(plot_data[:,2],plot_data[:,8],color=line_color)
-#
+left_axis.plot(plot_data[:,2],plot_data[:,8],color=line_color0,label=curve_text[0])
+left_axis.legend(loc='upper right',fontsize='10')
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
-plot.show()
 #
 #######
 #
 # save
 #
 plot.savefig(title)
+#
+#######
+#
+# plot to screen
+#
+plot.show()
 #
 ########################################################################
 #
