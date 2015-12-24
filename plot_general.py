@@ -6,7 +6,6 @@
 # 
 # Prepares a standard xy line plot.
 # It is set up for a secondary y axis if needed.
-# A matrix of 2 columns (x,y) must be passed in on the command line.
 # Data is contained in separare file and read in on command line.
 # Just include multiple files for more curves on the plot.
 # Graph label information is contained in the input files.
@@ -16,6 +15,7 @@
 #
 # input files
 # plot_labels = title,xaxis,yaxis; just input one per line as is
+# curve_labels = legend
 # axis_config.major = xmin,xmax,ymin,ymax; input tabbed (2) per line
 # axis_config.minor = tick marks; xmajor,ymajor,xminor,yminor
 #
@@ -30,8 +30,8 @@
 import numpy
 import matplotlib
 import matplotlib.pyplot as plot
+import screen_resolution
 from matplotlib.ticker import MultipleLocator
-from win32api import GetSystemMetrics
 from sys import argv
 script,plot_datafile=argv
 #
@@ -49,9 +49,8 @@ plot_data=numpy.loadtxt(plot_datafile,dtype=float)
 #
 # diagnostics
 #
-matplotlib.rcParams.update({'font.size': 18}) #set global plot font
-width=GetSystemMetrics (0) #get screen resolution
-height=GetSystemMetrics (1) #get screen resolution
+matplotlib.rcParams.update({'font.size': 24}) #set global plot font
+width,height,current_dpi=screen_resolution.screen_res()
 #
 ####### 
 #
@@ -69,7 +68,7 @@ curve_text=numpy.loadtxt('curve_labels.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
 ytitle=plot_text[2]
-line_color0=plot_text[3]
+line_color=plot_text[3]
 #
 plot.title(title)
 left_axis.set_xlabel(xtitle)
@@ -115,16 +114,16 @@ left_axis.grid(which='minor',axis='both')
 #
 # plot diagnostics
 #
-left_axis.plot(plot_data[:,2],plot_data[:,8],color=line_color0,label=curve_text[0])
-left_axis.legend(loc='upper right',fontsize='10')
+left_axis.plot(plot_data[:,2],plot_data[:,8],color=line_color,label=curve_text)
+left_axis.legend(loc='lower right',fontsize='16')
 plot.get_current_fig_manager().resize(width,height)
-plot.gcf().set_size_inches((0.01*width),(0.01*height))
+plot.gcf().set_size_inches((0.01*width),(0.01*height_in))
 #
 #######
 #
 # save
 #
-plot.savefig(title)
+plot.savefig(title,dpi=current_dpi)
 #
 #######
 #
