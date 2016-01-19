@@ -82,7 +82,7 @@ fig,left_axis=plot.subplots()
 # 
 # plot text
 #
-plot_text=numpy.loadtxt('plot_labels.kef.inp',dtype=str,delimiter='\n')
+plot_text=numpy.loadtxt('plot_labels.keff.inp',dtype=str,delimiter='\n')
 curve_text=numpy.loadtxt('curve_labels.keff.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
