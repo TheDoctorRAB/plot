@@ -48,6 +48,21 @@ plot_data1=numpy.loadtxt(plot_datafile1,dtype=float)
 plot_data2=numpy.loadtxt(plot_datafile2,dtype=float)
 plot_data3=numpy.loadtxt(plot_datafile3,dtype=float)
 plot_data4=numpy.loadtxt(plot_datafile4,dtype=float)
+plot_data5=numpy.loadtxt(plot_datafile5,dtype=float)
+plot_data6=numpy.loadtxt(plot_datafile6,dtype=float)
+plot_data7=numpy.loadtxt(plot_datafile7,dtype=float)
+plot_data8=numpy.loadtxt(plot_datafile8,dtype=float)
+plot_data9=numpy.loadtxt(plot_datafile9,dtype=float)
+plot_data10=numpy.loadtxt(plot_datafile10,dtype=float)
+plot_data11=numpy.loadtxt(plot_datafile11,dtype=float)
+plot_data12=numpy.loadtxt(plot_datafile12,dtype=float)
+plot_data13=numpy.loadtxt(plot_datafile13,dtype=float)
+plot_data14=numpy.loadtxt(plot_datafile14,dtype=float)
+plot_data15=numpy.loadtxt(plot_datafile15,dtype=float)
+plot_data16=numpy.loadtxt(plot_datafile16,dtype=float)
+plot_data17=numpy.loadtxt(plot_datafile17,dtype=float)
+plot_data18=numpy.loadtxt(plot_datafile18,dtype=float)
+plot_data19=numpy.loadtxt(plot_datafile19,dtype=float)
 #
 #######
 #
@@ -67,8 +82,8 @@ fig,left_axis=plot.subplots()
 # 
 # plot text
 #
-plot_text=numpy.loadtxt('plot_labels.keff.inp',dtype=str,delimiter='\n')
-curve_text=numpy.loadtxt('curve_labels.keff.inp',dtype=str,delimiter='\n')
+plot_text=numpy.loadtxt('plot_labels.radionuclide.content.inp',dtype=str,delimiter='\n')
+curve_text=numpy.loadtxt('curve_labels.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
 ytitle=plot_text[2]
@@ -102,8 +117,8 @@ left_axis.set_ylabel(ytitle)
 #
 # axis
 #
-axis_config_major=numpy.loadtxt('axis_config.major.keff.inp')
-axis_config_minor=numpy.loadtxt('axis_config.minor.keff.inp')
+axis_config_major=numpy.loadtxt('axis_config.major.radionuclide.content.inp')
+axis_config_minor=numpy.loadtxt('axis_config.minor.radionuclide.content.inp')
 xmin=axis_config_major[0,0]
 xmax=axis_config_major[0,1]
 #
@@ -137,12 +152,28 @@ left_axis.grid(which='minor',axis='both')
 #
 # plot diagnostics
 #
-left_axis.plot(plot_data0[:,8],plot_data0[:,4],color=line_color0,label=curve_text[0])
-left_axis.plot(plot_data1[:,8],plot_data1[:,4],color=line_color1,label=curve_text[4])
-left_axis.plot(plot_data2[:,8],plot_data2[:,4],color=line_color2,label=curve_text[8])
-left_axis.plot(plot_data3[:,8],plot_data3[:,4],color=line_color3,label=curve_text[12])
-left_axis.plot(plot_data4[:,8],plot_data4[:,4],color=line_color4,label=curve_text[16])
-left_axis.legend(loc='upper right',fontsize='16')
+left_axis.plot(plot_data0[:,0],plot_data0[:,7],color=line_color0,label=curve_text[0])
+left_axis.plot(plot_data1[:,0],plot_data1[:,7],color=line_color1,label=curve_text[1])
+left_axis.plot(plot_data2[:,0],plot_data2[:,7],color=line_color2,label=curve_text[2])
+left_axis.plot(plot_data3[:,0],plot_data3[:,7],color=line_color3,label=curve_text[3])
+left_axis.plot(plot_data4[:,0],plot_data4[:,7],color=line_color4,label=curve_text[4])
+left_axis.plot(plot_data5[:,0],plot_data5[:,7],color=line_color5,label=curve_text[5])
+left_axis.plot(plot_data6[:,0],plot_data6[:,7],color=line_color6,label=curve_text[6])
+left_axis.plot(plot_data7[:,0],plot_data7[:,7],color=line_color7,label=curve_text[7])
+left_axis.plot(plot_data8[:,0],plot_data8[:,7],color=line_color8,label=curve_text[8])
+left_axis.plot(plot_data9[:,0],plot_data9[:,7],color=line_color9,label=curve_text[9])
+left_axis.plot(plot_data10[:,0],plot_data10[:,7],color=line_color10,label=curve_text[10])
+left_axis.plot(plot_data11[:,0],plot_data11[:,7],color=line_color11,label=curve_text[11])
+left_axis.plot(plot_data12[:,0],plot_data12[:,7],color=line_color12,label=curve_text[12])
+left_axis.plot(plot_data13[:,0],plot_data13[:,7],color=line_color13,label=curve_text[13])
+left_axis.plot(plot_data14[:,0],plot_data14[:,7],color=line_color14,label=curve_text[14])
+left_axis.plot(plot_data15[:,0],plot_data15[:,7],color=line_color15,label=curve_text[15])
+left_axis.plot(plot_data16[:,0],plot_data16[:,7],color=line_color16,label=curve_text[16])
+left_axis.plot(plot_data17[:,0],plot_data17[:,7],color=line_color17,label=curve_text[17])
+left_axis.plot(plot_data18[:,0],plot_data18[:,7],color=line_color18,label=curve_text[18])
+#left_axis.plot(plot_data19[:,0],plot_data19[:,7],color=line_color19,label=curve_text[19])
+left_axis.set_yscale('log')
+left_axis.legend(loc='lower right',fontsize='16')
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 #
