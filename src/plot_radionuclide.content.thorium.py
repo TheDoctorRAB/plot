@@ -83,7 +83,7 @@ fig,left_axis=plot.subplots()
 # 
 # plot text
 #
-plot_text=numpy.loadtxt('plot_labels.radionuclide.content.inp',dtype=str,delimiter='\n')
+plot_text=numpy.loadtxt('plot_labels.radionuclide.content.thorium.inp',dtype=str,delimiter='\n')
 curve_text=numpy.loadtxt('curve_labels.radionuclide.content.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
@@ -114,14 +114,12 @@ left_axis.set_xlabel(xtitle)
 left_axis.set_ylabel(ytitle)
 # right_axis.set_ylabel()
 #
-annotate_text=numpy.loadtxt('annotate.inp',dtype=str,delimiter='\n')
-#
 #######
 #
 # axis
 #
-axis_config_major=numpy.loadtxt('axis_config.major.radionuclide.content.inp')
-axis_config_minor=numpy.loadtxt('axis_config.minor.radionuclide.content.inp')
+axis_config_major=numpy.loadtxt('axis_config.major.radionuclide.content.thorium.inp')
+axis_config_minor=numpy.loadtxt('axis_config.minor.radionuclide.content.thorium.inp')
 xmin=axis_config_major[0,0]
 xmax=axis_config_major[0,1]
 #
@@ -155,8 +153,8 @@ left_axis.grid(which='minor',axis='both')
 #
 # plot diagnostics
 #
-left_axis.plot(plot_data0[:,4],plot_data0[:,2],color=line_color0,label=curve_text[0])
-left_axis.plot(plot_data1[:,4],plot_data1[:,2],color=line_color1,label=curve_text[1])
+left_axis.plot(plot_data0[:,0],plot_data0[:,1],color=line_color0,label=curve_text[0])
+left_axis.plot(plot_data1[:,0],plot_data1[:,1],color=line_color1,label=curve_text[1])
 #left_axis.plot(plot_data2[:,0],plot_data2[:,2],color=line_color2,label=curve_text[2])
 #left_axis.plot(plot_data3[:,0],plot_data3[:,2],color=line_color3,label=curve_text[3])
 #left_axis.plot(plot_data4[:,0],plot_data4[:,2],color=line_color4,label=curve_text[4])
@@ -176,7 +174,6 @@ left_axis.plot(plot_data1[:,4],plot_data1[:,2],color=line_color1,label=curve_tex
 #left_axis.plot(plot_data18[:,0],plot_data18[:,2],color=line_color18,label=curve_text[18])
 #left_axis.plot(plot_data19[:,0],plot_data19[:,2],color=line_color19,label=curve_text[19])
 left_axis.legend(loc='upper left',fontsize='16')
-left_axis.annotate(annotate_text,xy=(24,43000),xytext=(24,43000))
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 #
