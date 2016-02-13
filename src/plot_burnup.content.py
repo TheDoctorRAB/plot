@@ -66,7 +66,7 @@ fig,left_axis=plot.subplots()
 # plot text
 #
 plot_text=numpy.loadtxt('plot_labels.burnup.content.inp',dtype=str,delimiter='\n')
-#curve_text=numpy.loadtxt('curve_labels.burnup.content.inp',dtype=str,delimiter='\n')
+curve_text=numpy.loadtxt('curve_labels.burnup.content.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
 ytitle=plot_text[2]
@@ -116,8 +116,8 @@ left_axis.grid(which='minor',axis='both')
 #
 # plot diagnostics
 #
-left_axis.plot(plot_data[:,0],plot_data[:,1],color=line_color)
-#left_axis.legend(loc='lower right',fontsize='16')
+left_axis.plot(plot_data[:,0],plot_data[:,1],color=line_color,label=curve_text)
+left_axis.legend(loc='upper right',fontsize='16')
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 #

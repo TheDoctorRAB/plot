@@ -33,7 +33,7 @@ import matplotlib.pyplot as plot
 import screen_resolution
 from matplotlib.ticker import MultipleLocator
 from sys import argv
-script,plot_datafile0,plot_datafile1=argv
+script,plot_datafile0,plot_datafile1,plot_datafile2=argv
 #,plot_datafile2,plot_datafile3,plot_datafile4,plot_datafile5,plot_datafile6,plot_datafile7,plot_datafile8,plot_datafile9,plot_datafile10,plot_datafile11,plot_datafile12,plot_datafile13,plot_datafile14,plot_datafile15,plot_datafile16,plot_datafile17,plot_datafile18,plot_datafile19=argv
 #
 ########################################################################
@@ -46,7 +46,7 @@ script,plot_datafile0,plot_datafile1=argv
 #
 plot_data0=numpy.loadtxt(plot_datafile0,dtype=float)
 plot_data1=numpy.loadtxt(plot_datafile1,dtype=float)
-#plot_data2=numpy.loadtxt(plot_datafile2,dtype=float)
+plot_data2=numpy.loadtxt(plot_datafile2,dtype=float)
 #plot_data3=numpy.loadtxt(plot_datafile3,dtype=float)
 #plot_data4=numpy.loadtxt(plot_datafile4,dtype=float)
 #plot_data5=numpy.loadtxt(plot_datafile5,dtype=float)
@@ -115,6 +115,9 @@ left_axis.set_ylabel(ytitle)
 # right_axis.set_ylabel()
 #
 annotate_text=numpy.loadtxt('annotate.inp',dtype=str,delimiter='\n')
+annotate_title=annotate_text[0]
+annotate_x=annotate_text[1]
+annotate_y=annotate_text[2]
 #
 #######
 #
@@ -157,8 +160,8 @@ left_axis.grid(which='minor',axis='both')
 #
 left_axis.plot(plot_data0[:,4],plot_data0[:,2],color=line_color0,label=curve_text[0])
 left_axis.plot(plot_data1[:,4],plot_data1[:,2],color=line_color1,label=curve_text[1])
-#left_axis.plot(plot_data2[:,0],plot_data2[:,2],color=line_color2,label=curve_text[2])
-#left_axis.plot(plot_data3[:,0],plot_data3[:,2],color=line_color3,label=curve_text[3])
+left_axis.plot(plot_data2[:,4],plot_data2[:,2],color=line_color2,label=curve_text[2])
+#left_axis.plot(plot_data3[:,4],plot_data3[:,2],color=line_color3,label=curve_text[3])
 #left_axis.plot(plot_data4[:,0],plot_data4[:,2],color=line_color4,label=curve_text[4])
 #left_axis.plot(plot_data5[:,0],plot_data5[:,2],color=line_color5,label=curve_text[5])
 #left_axis.plot(plot_data6[:,0],plot_data6[:,2],color=line_color6,label=curve_text[6])
@@ -175,8 +178,9 @@ left_axis.plot(plot_data1[:,4],plot_data1[:,2],color=line_color1,label=curve_tex
 #left_axis.plot(plot_data17[:,0],plot_data17[:,2],color=line_color17,label=curve_text[17])
 #left_axis.plot(plot_data18[:,0],plot_data18[:,2],color=line_color18,label=curve_text[18])
 #left_axis.plot(plot_data19[:,0],plot_data19[:,2],color=line_color19,label=curve_text[19])
+#left_axis.set_yscale('log')
 left_axis.legend(loc='upper left',fontsize='16')
-left_axis.annotate(annotate_text,xy=(24,43000),xytext=(24,43000))
+left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y))
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 #
