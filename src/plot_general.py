@@ -15,7 +15,7 @@
 #
 # input files
 # plot_labels = title,xaxis,yaxis; just input one per line as is
-# curve_labels = legend
+# curve_lables = legend text
 # axis_config.major = xmin,xmax,ymin,ymax; input tabbed (2) per line
 # axis_config.minor = tick marks; xmajor,ymajor,xminor,yminor
 #
@@ -33,7 +33,7 @@ import matplotlib.pyplot as plot
 import screen_resolution
 from matplotlib.ticker import MultipleLocator
 from sys import argv
-script,plot_datafile=argv
+script,plot_datafile0=argv
 #
 ########################################################################
 #
@@ -43,13 +43,13 @@ script,plot_datafile=argv
 #
 # open the plot data file(s)
 #
-plot_data=numpy.loadtxt(plot_datafile,dtype=float)
+plot_data0=numpy.loadtxt(plot_datafile0,dtype=float)
 #
 #######
 #
 # diagnostics
 #
-matplotlib.rcParams.update({'font.size': 24}) #set global plot font
+matplotlib.rcParams.update({'font.size': 30}) #set global plot font
 width,height,current_dpi=screen_resolution.screen_res()
 #
 ####### 
@@ -68,12 +68,36 @@ curve_text=numpy.loadtxt('curve_labels.inp',dtype=str,delimiter='\n')
 title=plot_text[0]
 xtitle=plot_text[1]
 ytitle=plot_text[2]
-line_color=plot_text[3]
+line_color0=plot_text[3]
+line_color1=plot_text[4]
+line_color2=plot_text[5]
+line_color3=plot_text[6]
+line_color4=plot_text[7]
+line_color5=plot_text[8]
+line_color6=plot_text[9]
+line_color7=plot_text[10]
+line_color8=plot_text[11]
+line_color9=plot_text[12]
+line_color10=plot_text[13]
+line_color11=plot_text[14]
+line_color12=plot_text[15]
+line_color13=plot_text[16]
+line_color14=plot_text[17]
+line_color15=plot_text[18]
+line_color16=plot_text[19]
+line_color17=plot_text[20]
+line_color18=plot_text[21]
+line_color19=plot_text[22]
 #
 plot.title(title)
 left_axis.set_xlabel(xtitle)
 left_axis.set_ylabel(ytitle)
 # right_axis.set_ylabel()
+#
+annotate_text=numpy.loadtxt('annotate.inp',dtype=str,delimiter='\n')
+annotate_title=annotate_text[0]
+annotate_x=annotate_text[1]
+annotate_y=annotate_text[2]
 #
 #######
 #
@@ -114,10 +138,11 @@ left_axis.grid(which='minor',axis='both')
 #
 # plot diagnostics
 #
-left_axis.plot(plot_data[:,2],plot_data[:,8],color=line_color,label=curve_text)
-left_axis.legend(loc='lower right',fontsize='16')
+left_axis.plot(plot_data0[:,0],plot_data0[:,1],color=line_color0,label=curve_text[0],linewidth=2.0)
+left_axis.legend(loc='upper left',fontsize='24')
+left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y))
 plot.get_current_fig_manager().resize(width,height)
-plot.gcf().set_size_inches((0.01*width),(0.01*height_in))
+plot.gcf().set_size_inches((0.01*width),(0.01*height))
 #
 #######
 #
