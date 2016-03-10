@@ -72,12 +72,12 @@ ytitle=plot_text[2]
 line_color0=plot_text[3]
 line_color1=plot_text[4]
 line_color2=plot_text[5]
-line_color3=plot_text[6]
-line_color4=plot_text[7]
-line_color5=plot_text[8]
-line_color6=plot_text[9]
-line_color7=plot_text[10]
-line_color8=plot_text[11]
+#line_color3=plot_text[6]
+#line_color4=plot_text[7]
+#line_color5=plot_text[8]
+#line_color6=plot_text[9]
+#line_color7=plot_text[10]
+#line_color8=plot_text[11]
 #line_color9=plot_text[12]
 #line_color10=plot_text[13]
 #line_color11=plot_text[14]
@@ -140,18 +140,11 @@ left_axis.grid(which='minor',axis='both')
 # plot diagnostics
 #
 left_axis.plot(plot_data0[:,0],plot_data0[:,1],color=line_color0,label=curve_text[0],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,2],color=line_color1,label=curve_text[1],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color2,label=curve_text[2],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_text[3],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,5],color=line_color4,label=curve_text[4],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,6],color=line_color5,label=curve_text[5],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,7],color=line_color6,label=curve_text[6],linewidth=2.0)
-left_axis.plot(plot_data0[:,0],plot_data0[:,8],color=line_color7,label=curve_text[7],linewidth=2.0)
-left_axis.plot(plot_data1[:,0],plot_data1[:,1],color=line_color8,label=curve_text[8],linewidth=3.5)
-#left_axis.set_xscale('log')
-#left_axis.set_yscale('log')
+left_axis.plot(plot_data1[:,0],plot_data1[:,1],'rs',color=line_color1,label=curve_text[1],linewidth=2.0)
+left_axis.set_xscale('log')
+left_axis.set_yscale('log')
 left_axis.legend(loc='lower right',fontsize='24')
-#left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y))
+left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y))
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 #
