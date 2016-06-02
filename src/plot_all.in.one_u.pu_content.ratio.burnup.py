@@ -124,9 +124,9 @@ fig,left_axis=plot.subplots()
 # 
 # plot text
 #
-title='Uranium and plutonium mass as a function of burnup'
+title='Uranium-plutonium mass as a function of burnup'
 xtitle='burnup [GWD/MTU]'
-ytitle='radionuclide mass [g]'
+ytitle='mass fraction [-]'
 #
 ###
 #
@@ -135,10 +135,8 @@ ytitle='radionuclide mass [g]'
 # add curve_textN for each plot_dataN 
 #
 line_color0='blue' #color
-line_color1='red' #color
 #
-curve_text0='$^{233}U$' #legend text
-curve_text1='$^{239}Pu$' #legend text
+curve_text0='$^{233}U$:$^{239}Pu$' #legend text
 #
 legend_location='upper left' #location of legend on grid
 legend_font=28
@@ -148,9 +146,9 @@ legend_font=28
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='$0.25\ Th\ :\ 0.70\ ^{238}U\ :\ 0.05\ ^{235}U$' 
+annotate_title='$0.05\ Th\ :\ 0.90\ ^{238}U\ :\ 0.05\ ^{235}U$' 
 annotate_x=2.5 
-annotate_y=0.75*numpy.amax(plot_data1[:,3])
+annotate_y=0.75*numpy.amax(plot_data0[:,3]/plot_data1[:,3])
 #
 ###
 #
@@ -160,14 +158,14 @@ xmin=0
 xmax=numpy.amax(plot_data1[:,2]) 
 #
 ymin=0 
-ymax=numpy.amax(plot_data1[:,3])
+ymax=numpy.amax(plot_data0[:,3]/plot_data1[:,3])
 #
 ###
 #
 # axis ticks
 #
 xmajortick=5
-ymajortick=5000
+ymajortick=0.1
 #
 xminortick=xmajortick/5
 yminortick=ymajortick/5
@@ -245,8 +243,7 @@ left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,
 #
 # plot data
 #
-left_axis.plot(plot_data0[:,2],plot_data0[:,3],color=line_color0,label=curve_text0,linewidth=curve_linewidth)
-left_axis.plot(plot_data1[:,2],plot_data1[:,3],color=line_color1,label=curve_text1,linewidth=curve_linewidth)
+left_axis.plot(plot_data0[:,2],(plot_data0[:,3]/plot_data1[:,3]),color=line_color0,label=curve_text0,linewidth=curve_linewidth)
 left_axis.legend(loc=legend_location,fontsize=legend_font) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
