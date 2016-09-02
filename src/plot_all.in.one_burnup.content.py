@@ -135,7 +135,8 @@ ytitle='burnup [GWD/MTU]'
 #
 line_color0='black' #color
 #
-curve_text0='burnup at $k^+$' #legend text
+curve_text0='burnup at near critical' #legend text
+#curve_text0='burnup at $k^+$' #legend text
 #
 legend_location='upper right' #location of legend on grid
 legend_font=28
@@ -145,7 +146,7 @@ legend_font=28
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='xxxxx pitch' 
+annotate_title='13.2 mm pitch' 
 annotate_x=0.05
 annotate_y=12
 #
@@ -156,8 +157,8 @@ annotate_y=12
 xmin=0
 xmax=0.95
 #
-ymin=10
-ymax=22
+ymin=14
+ymax=25
 #
 ###
 #
