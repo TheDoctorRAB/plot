@@ -127,7 +127,7 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Decay heat of used fuel'
+title='Decay heat of used fuel due to photons'
 xtitle='Time (y)'
 ytitle='Decay heat (W)'
 #
