@@ -176,7 +176,7 @@ legend_font=28
 xmin=0
 xmax=20
 #
-ymin=0.75E3
+ymin=1E2
 ymax=1E7
 #
 ###
