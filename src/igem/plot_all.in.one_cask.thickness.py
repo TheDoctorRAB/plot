@@ -18,22 +18,25 @@
 # imports
 #
 # plot
+#
 import numpy
 import matplotlib
 import matplotlib.pyplot as plot
 from matplotlib.ticker import MultipleLocator
-###
+#
+#######
 #
 # command line
+#
 from sys import argv
 script,plot_datafile=argv #column 0 is the x values then odd columns contain dose/flux
-###
+#
+#######
 #
 # screen resolution
+#
 import Tkinter
-import ctypes
 root=Tkinter.Tk()
-user32=ctypes.windll.user32
 #
 ########################################################################
 #
@@ -47,8 +50,8 @@ user32=ctypes.windll.user32
 #
 # pixels
 #
-width_px=root.winfo_screenwidth()
-height_px=root.winfo_screenheight()
+width=root.winfo_screenwidth()
+height=root.winfo_screenheight()
 #
 ###
 #
@@ -68,21 +71,24 @@ height_in=height_mm/25.4
 #
 # dpi
 #
-width_dpi=width_px/width_in
-height_dpi=height_px/height_in
+width_dpi=width/width_in
+height_dpi=height/height_in
 #
-###
+dpi_values=(96,120,144,168,192)
+current_dpi=width_dpi
+minimum=1000
 #
-# get system metrics
+for dval in dpi_values:
+  difference=abs(dval-width_dpi)
+  if difference<minimum:
+    minimum=difference
+    current_dpi=dval
 #
-user32.SetProcessDPIAware()
-[width,height]=[user32.GetSystemMetrics(0),user32.GetSystemMetrics(1)]
-current_dpi=width*96/width_px
-#
-###
+#######
 #
 # output to screen
-print('width: %i px, height: %i px'%(width_px,height_px))
+#
+print('width: %i px, height: %i px'%(width,height))
 print('width: %i mm, height: %i mm'%(width_mm,height_mm))
 print('width: %0.f in, height: %0.f in'%(width_in,height_in))
 print('width: %0.f dpi, height: %0.f dpi'%(width_dpi,height_dpi))
@@ -121,7 +127,7 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Dose rate - East plate'
+title='Dose rate - West plate'
 xtitle='Wall thickness [cm]'
 ytitle='Dose rate [$\mu$Sv/h]'
 #
@@ -151,15 +157,15 @@ legend_font=42
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='L-3030'
-annotate_x=2
-annotate_y=30000
+annotate_title='H-5060'
+annotate_x=28
+annotate_y=15000
 #
 ###
 #
 # axis domain and range
 #
-xmin=1.3
+xmin=1
 xmax=31
 #
 ymin=40
@@ -242,17 +248,17 @@ left_axis.set_yscale('log')
 # annotation
 # comment out if not needed
 #
-#left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y),fontsize=annotate_fontsize)
+left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y),fontsize=annotate_fontsize)
 #
 #######
 #
 # plot data
 #
-left_axis.plot(plot_data0[:,0],plot_data0[:,1],marker='o',color=line_color0,label=curve_text0,linewidth=curve_linewidth,markersize=20)
-left_axis.plot(plot_data0[:,0],plot_data0[:,3],marker='o',color=line_color2,label=curve_text2,linewidth=curve_linewidth,markersize=20)
-left_axis.plot(plot_data0[:,0],plot_data0[:,5],marker='o',color=line_color4,label=curve_text4,linewidth=curve_linewidth,markersize=20)
-left_axis.plot(plot_data0[:,0],plot_data0[:,7],color=line_color6,label=curve_text6,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,9],color=line_color6,label=curve_text6,linewidth=curve_linewidth)
+left_axis.plot(plot_data[:,0],plot_data[:,1],marker='o',color=line_color0,label=curve_text0,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,3],marker='o',color=line_color1,label=curve_text1,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,5],marker='o',color=line_color2,label=curve_text2,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,7],marker='o',color=line_color3,label=curve_text3,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,9],marker='o',color=line_color4,label=curve_text4,linewidth=curve_linewidth,markersize=20)
 left_axis.legend(loc=legend_location,fontsize=legend_font) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
