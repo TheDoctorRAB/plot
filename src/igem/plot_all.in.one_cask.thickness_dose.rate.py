@@ -29,7 +29,7 @@ from matplotlib.ticker import MultipleLocator
 # command line
 #
 from sys import argv
-script,plot_datafile0=argv #add plotdatafileN for each data file to plot
+script,plot_datafile=argv #column 0 is the x values then odd columns contain dose/flux
 #
 #######
 #
@@ -100,7 +100,7 @@ print('current DPI is %0.f' % (current_dpi))
 # open the plot data file(s)
 # add plot_dataN for each plot_datafileN
 #
-plot_data0=numpy.loadtxt(plot_datafile0,dtype=float)
+plot_data=numpy.loadtxt(plot_datafile,dtype=float)
 #
 #######
 #
@@ -110,11 +110,11 @@ plot_data0=numpy.loadtxt(plot_datafile0,dtype=float)
 #
 # font sizes
 #
-matplotlib.rcParams.update({'font.size': 32}) #axis numbers
+matplotlib.rcParams.update({'font.size': 48}) #axis numbers
 #
-title_fontsize=48 #plot title
-axis_fontsize=36 #axis labels
-annotate_fontsize=30 #annotation
+title_fontsize=54 #plot title
+axis_fontsize=48 #axis labels
+annotate_fontsize=48 #annotation
 #
 ###
 #
@@ -127,9 +127,9 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Radioactivity of used fuel'
-xtitle='Time (y)'
-ytitle='Radioactivity (Ci)'
+title='Dose rate - West plate'
+xtitle='Wall thickness [cm]'
+ytitle='Dose rate [$\mu$Sv/h]'
 #
 ###
 #
@@ -137,64 +137,64 @@ ytitle='Radioactivity (Ci)'
 # add linecolorN for each plot_dataN
 # add curve_textN for each plot_dataN
 #
-line_color0='black' #color
-line_color1='blue' #color
+line_color0='blue' #color
+line_color1='orange' #color
 line_color2='red' #color
 line_color3='green' #color
-#line_color4='cyan' #color
-#line_color5='magenta' #color
-#line_color6='purple' #color
-#line_color7='orange' #color
-#line_color8='pink' #color
+line_color4='cyan' #color
 #
-curve_text0='H-4555' #legend text
-curve_text1='H-5055' #legend text
-curve_text2='H-4560' #legend text
-curve_text3='H-5060' #legend text
-#curve_text4='L-3533' #legend text
-#curve_text5='L-3535' #legend text
-#curve_text6='L-3240' #legend text
-#curve_text7='L-3540' #legend text
-#curve_text8='L-4040' #legend text
+curve_text0='10 wt% $B_4C$'	    #legend text
+curve_text1='30 wt% $B_4C$'	    #legend text
+curve_text2='50 wt% $B_4C$'	    #legend text
+curve_text3='70 wt% $B_4C$'	    #legend text
+curve_text4='90 wt% $B_4C$'	    #legend text
 #
-legend_location='upper right' #location of legend on grid
-legend_font=28
+legend_location='lower left' #location of legend on grid
+legend_font=42
 #
 ###
 #
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='Cs-137 dominates > 10 y'
-annotate_x=16
-annotate_y=1E6
+annotate_title='H-5060'
+annotate_x=50
+annotate_y=15000
+#
+annotate_title2='Water backfill'
+annotate_x2=50
+annotate_y2=9000
+#
+annotate_title3='0 wt% $^{10}B$'
+annotate_x3=50
+annotate_y3=5500
 #
 ###
 #
 # axis domain and range
 #
-xmin=0
-xmax=20
+xmin=1
+xmax=61
 #
-ymin=1E5
-ymax=1E9
+ymin=1
+ymax=30000
 #
 ###
 #
 # axis ticks
 #
 xmajortick=5
-#ymajortick=0.10
+ymajortick=5000
 #
 xminortick=1
-#yminortick=0.01
+yminortick=1000
 #
 ###
 #
 # grid linewidth
 #
-major_grid_linewidth=1.5
-minor_grid_linewidth=1.1
+major_grid_linewidth=2.5
+minor_grid_linewidth=2.1
 #
 major_grid_tick_length=7
 minor_grid_tick_length=5
@@ -203,7 +203,7 @@ minor_grid_tick_length=5
 #
 # curve linewidth
 #
-curve_linewidth=2.0
+curve_linewidth=4.0
 #
 #######
 #
@@ -240,8 +240,8 @@ left_axis.axis(ymin=ymin,ymax=ymax)
 #
 left_axis.xaxis.set_major_locator(MultipleLocator(xmajortick))
 left_axis.xaxis.set_minor_locator(MultipleLocator(xminortick))
-#left_axis.yaxis.set_major_locator(MultipleLocator(ymajortick))
-#left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
+left_axis.yaxis.set_major_locator(MultipleLocator(ymajortick))
+left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
 #
 ###
 #
@@ -257,20 +257,18 @@ left_axis.set_yscale('log')
 # comment out if not needed
 #
 left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y),fontsize=annotate_fontsize)
+left_axis.annotate(annotate_title2,xy=(annotate_x2,annotate_y2),xytext=(annotate_x2,annotate_y2),fontsize=annotate_fontsize)
+left_axis.annotate(annotate_title3,xy=(annotate_x3,annotate_y3),xytext=(annotate_x3,annotate_y3),fontsize=annotate_fontsize)
 #
 #######
 #
 # plot data
 #
-left_axis.plot(plot_data0[:,0],plot_data0[:,1],color=line_color0,label=curve_text0,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,2],color=line_color1,label=curve_text1,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color2,label=curve_text2,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_text3,linewidth=curve_linewidth)
-#left_axis.plot(plot_data0[:,0],plot_data0[:,5],color=line_color4,label=curve_text4,linewidth=curve_linewidth)
-#left_axis.plot(plot_data0[:,0],plot_data0[:,6],color=line_color5,label=curve_text5,linewidth=curve_linewidth)
-#left_axis.plot(plot_data0[:,0],plot_data0[:,7],color=line_color6,label=curve_text6,linewidth=curve_linewidth)
-#left_axis.plot(plot_data0[:,0],plot_data0[:,8],color=line_color7,label=curve_text7,linewidth=curve_linewidth)
-#left_axis.plot(plot_data0[:,0],plot_data0[:,9],color=line_color8,label=curve_text8,linewidth=curve_linewidth)
+left_axis.plot(plot_data[:,0],plot_data[:,1],marker='o',color=line_color0,label=curve_text0,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,3],marker='o',color=line_color1,label=curve_text1,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,5],marker='o',color=line_color2,label=curve_text2,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,7],marker='o',color=line_color3,label=curve_text3,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,0],plot_data[:,9],marker='o',color=line_color4,label=curve_text4,linewidth=curve_linewidth,markersize=20)
 left_axis.legend(loc=legend_location,fontsize=legend_font) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))

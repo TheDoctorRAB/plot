@@ -144,14 +144,16 @@ line_color3='green' #color
 line_color4='cyan' #color
 line_color5='magenta' #color
 line_color6='purple' #color
+line_color7='orange' #color
 #
 curve_text0='T-4045' #legend text
 curve_text1='T-4545' #legend text
 curve_text2='T-5045' #legend text
-curve_text3='T-4250' #legend text
-curve_text4='T-42550' #legend text
-curve_text5='T-4550' #legend text
-curve_text6='T-5050' #legend text
+curve_text3='T-4050' #legend text
+curve_text4='T-4250' #legend text
+curve_text5='T-42550' #legend text
+curve_text6='T-4550' #legend text
+curve_text7='T-5050' #legend text
 #
 legend_location='upper right' #location of legend on grid
 legend_font=28
@@ -265,6 +267,7 @@ left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_tex
 left_axis.plot(plot_data0[:,0],plot_data0[:,5],color=line_color4,label=curve_text4,linewidth=curve_linewidth)
 left_axis.plot(plot_data0[:,0],plot_data0[:,6],color=line_color5,label=curve_text5,linewidth=curve_linewidth)
 left_axis.plot(plot_data0[:,0],plot_data0[:,7],color=line_color6,label=curve_text6,linewidth=curve_linewidth)
+left_axis.plot(plot_data0[:,0],plot_data0[:,8],color=line_color7,label=curve_text7,linewidth=curve_linewidth)
 left_axis.legend(loc=legend_location,fontsize=legend_font) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
