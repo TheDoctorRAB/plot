@@ -127,7 +127,7 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Dose rate - West plate'
+title='Dose rate - Top plate'
 xtitle='Wall thickness [cm]'
 ytitle='Dose rate [$\mu$Sv/h]'
 #
@@ -157,27 +157,27 @@ legend_font=42
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='H-5060'
-annotate_x=50
-annotate_y=15000
+annotate_title='L-3030'
+annotate_x=25
+annotate_y=2700
 #
-annotate_title2='Water backfill'
-annotate_x2=50
-annotate_y2=9000
+annotate_title2='Air backfill'
+annotate_x2=25
+annotate_y2=1700
 #
-annotate_title3='0 wt% $^{10}B$'
-annotate_x3=50
-annotate_y3=5500
+annotate_title3='75 wt% $^{10}B$'
+annotate_x3=25
+annotate_y3=900
 #
 ###
 #
 # axis domain and range
 #
 xmin=1
-xmax=61
+xmax=31
 #
 ymin=1
-ymax=30000
+ymax=4000
 #
 ###
 #
