@@ -176,7 +176,7 @@ annotate_y3=900
 xmin=1
 xmax=31
 #
-ymin=1
+ymin=0.1
 ymax=4000
 #
 ###

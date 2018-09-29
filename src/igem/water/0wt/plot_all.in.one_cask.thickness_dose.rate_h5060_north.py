@@ -159,11 +159,11 @@ legend_font=42
 #
 annotate_title='H-5060'
 annotate_x=25
-annotate_y=19000
+annotate_y=9000
 #
 annotate_title2='Water backfill'
 annotate_x2=25
-annotate_y2=11000
+annotate_y2=1000
 #
 annotate_title3='0 wt% $^{10}B$'
 annotate_x3=25
@@ -177,7 +177,7 @@ xmin=1
 xmax=31
 #
 ymin=1
-ymax=30000
+ymax=10000
 #
 ###
 #
