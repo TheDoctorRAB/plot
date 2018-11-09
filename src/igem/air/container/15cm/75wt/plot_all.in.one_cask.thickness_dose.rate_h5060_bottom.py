@@ -171,7 +171,7 @@ annotate_y3=900
 #
 annotate_title4='15cm thick concrete'
 annotate_x4=21
-annotate_y4=1.1
+annotate_y4=0.15
 #
 ###
 #
@@ -180,7 +180,7 @@ annotate_y4=1.1
 xmin=1
 xmax=31
 #
-ymin=1
+ymin=0.1
 ymax=4000
 #
 ###
