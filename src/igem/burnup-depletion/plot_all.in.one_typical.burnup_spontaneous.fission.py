@@ -127,9 +127,9 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Radioactivity of used fuel'
+title='Spontaneous fission rate per assembly'
 xtitle='Time (y)'
-ytitle='Radioactivity (Ci)'
+ytitle='Spontaneous fission rate (neutrons/s)'
 #
 ###
 #
@@ -137,25 +137,23 @@ ytitle='Radioactivity (Ci)'
 # add linecolorN for each plot_dataN
 # add curve_textN for each plot_dataN
 #
-line_color0='black' #color
-line_color1='blue' #color
-line_color2='red' #color
-line_color3='green' #color
+line_color0='blue' #color
+#line_color1='black' #color
+#line_color2='red' #color
+#line_color3='green' #color
 #line_color4='cyan' #color
 #line_color5='magenta' #color
 #line_color6='purple' #color
 #line_color7='orange' #color
-#line_color8='pink' #color
 #
-curve_text0='H-4555' #legend text
-curve_text1='H-5055' #legend text
-curve_text2='H-4560' #legend text
-curve_text3='H-5060' #legend text
-#curve_text4='L-3533' #legend text
-#curve_text5='L-3535' #legend text
-#curve_text6='L-3240' #legend text
-#curve_text7='L-3540' #legend text
-#curve_text8='L-4040' #legend text
+curve_text0='T-4045' #legend text
+#curve_text1='T-4545' #legend text
+#curve_text2='T-5045' #legend text
+#curve_text3='T-4050'#legend text
+#curve_text4='T-4250' #legend text
+#curve_text5='T-42550' #legend text
+#curve_text6='T-4550' #legend text
+#curve_text7='T-5050' #legend text
 #
 legend_location='upper right' #location of legend on grid
 legend_font=28
@@ -165,9 +163,9 @@ legend_font=28
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='Cs-137 dominates > 10 y'
-annotate_x=16
-annotate_y=1E6
+#annotate_title='Notes'
+#annotate_x=0
+#annotate_y=0
 #
 ###
 #
@@ -176,8 +174,8 @@ annotate_y=1E6
 xmin=0
 xmax=20
 #
-ymin=1E5
-ymax=1E9
+ymin=1.8E8
+ymax=5.6E8
 #
 ###
 #
@@ -256,21 +254,20 @@ left_axis.set_yscale('log')
 # annotation
 # comment out if not needed
 #
-left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y),fontsize=annotate_fontsize)
+#left_axis.annotate(annotate_title,xy=(annotate_x,annotate_y),xytext=(annotate_x,annotate_y),fontsize=annotate_fontsize)
 #
 #######
 #
 # plot data
 #
-left_axis.plot(plot_data0[:,0],plot_data0[:,1],color=line_color0,label=curve_text0,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,2],color=line_color1,label=curve_text1,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color2,label=curve_text2,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_text3,linewidth=curve_linewidth)
+left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color0,label=curve_text0,linewidth=curve_linewidth)
+#left_axis.plot(plot_data0[:,0],plot_data0[:,2],color=line_color1,label=curve_text1,linewidth=curve_linewidth)
+#left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color2,label=curve_text2,linewidth=curve_linewidth)
+#left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_text3,linewidth=curve_linewidth)
 #left_axis.plot(plot_data0[:,0],plot_data0[:,5],color=line_color4,label=curve_text4,linewidth=curve_linewidth)
 #left_axis.plot(plot_data0[:,0],plot_data0[:,6],color=line_color5,label=curve_text5,linewidth=curve_linewidth)
 #left_axis.plot(plot_data0[:,0],plot_data0[:,7],color=line_color6,label=curve_text6,linewidth=curve_linewidth)
 #left_axis.plot(plot_data0[:,0],plot_data0[:,8],color=line_color7,label=curve_text7,linewidth=curve_linewidth)
-#left_axis.plot(plot_data0[:,0],plot_data0[:,9],color=line_color8,label=curve_text8,linewidth=curve_linewidth)
 left_axis.legend(loc=legend_location,fontsize=legend_font) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))

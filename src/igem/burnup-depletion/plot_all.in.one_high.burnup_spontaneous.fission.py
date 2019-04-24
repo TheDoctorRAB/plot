@@ -127,7 +127,7 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Spontaneous fission rate for Cm-244'
+title='Spontaneous fission rate per assembly'
 xtitle='Time (y)'
 ytitle='Spontaneous fission rate (neutrons/s)'
 #
@@ -137,15 +137,15 @@ ytitle='Spontaneous fission rate (neutrons/s)'
 # add linecolorN for each plot_dataN
 # add curve_textN for each plot_dataN
 #
-line_color0='black' #color
-line_color1='blue' #color
-line_color2='red' #color
-line_color3='green' #color
+line_color0='blue' #color
+#line_color1='black' #color
+#line_color2='red' #color
+#line_color3='green' #color
 #
-curve_text0='H-4555' #legend text
-curve_text1='H-5055' #legend text
-curve_text2='H-4560' #legend text
-curve_text3='H-5060' #legend text
+curve_text0='H-5060' #legend text
+#curve_text1='H-5055' #legend text
+#curve_text2='H-4560' #legend text
+#curve_text3='H-5060' #legend text
 #
 legend_location='upper right' #location of legend on grid
 legend_font=28
@@ -166,8 +166,8 @@ legend_font=28
 xmin=0
 xmax=20
 #
-ymin=5E7
-ymax=3E9
+ymin=4E8
+ymax=1.5E9
 #
 ###
 #
@@ -252,10 +252,10 @@ left_axis.set_yscale('log')
 #
 # plot data
 #
-left_axis.plot(plot_data0[:,0],plot_data0[:,1],color=line_color0,label=curve_text0,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,2],color=line_color1,label=curve_text1,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color2,label=curve_text2,linewidth=curve_linewidth)
-left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_text3,linewidth=curve_linewidth)
+left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color0,label=curve_text0,linewidth=curve_linewidth)
+#left_axis.plot(plot_data0[:,0],plot_data0[:,2],color=line_color1,label=curve_text1,linewidth=curve_linewidth)
+#left_axis.plot(plot_data0[:,0],plot_data0[:,3],color=line_color2,label=curve_text2,linewidth=curve_linewidth)
+#left_axis.plot(plot_data0[:,0],plot_data0[:,4],color=line_color3,label=curve_text3,linewidth=curve_linewidth)
 left_axis.legend(loc=legend_location,fontsize=legend_font) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
