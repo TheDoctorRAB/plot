@@ -129,9 +129,9 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Decay heat of used fuel per assembly'
+title='Spontaneous fission rate per assembly'
 xtitle='Time (y)'
-ytitle='Decay heat (W)'
+ytitle='Spontaneous fission rate (neutrons/s)'
 #
 ###
 #
@@ -178,15 +178,15 @@ legend_font=28
 xmin=0
 xmax=20
 #
-ymin=1E2
-ymax=3.5E6
+ymin=5E7
+ymax=2E9
 #
 ###
 #
 # axis ticks
 #
 xmajortick=5
-#ymajortick=0.10
+#ymajortick=0.1
 #
 xminortick=1
 #yminortick=0.01
