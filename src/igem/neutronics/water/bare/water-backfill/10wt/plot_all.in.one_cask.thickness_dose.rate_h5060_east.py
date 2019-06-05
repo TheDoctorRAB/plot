@@ -158,16 +158,16 @@ legend_font=42
 # position of the annotation dependent on axis domain and range
 #
 annotate_title='H-5060'
-annotate_x=25
-annotate_y=6000
+annotate_x=23
+annotate_y=13000
 #
 annotate_title2='Water backfill'
-annotate_x2=25
-annotate_y2=3000
+annotate_x2=23
+annotate_y2=8000
 #
 annotate_title3='10 wt% $^{10}B$'
-annotate_x3=25
-annotate_y3=1500
+annotate_x3=23
+annotate_y3=3000
 #
 ###
 #
@@ -177,7 +177,7 @@ xmin=1
 xmax=31
 #
 ymin=1
-ymax=10000
+ymax=20000
 #
 ###
 #
