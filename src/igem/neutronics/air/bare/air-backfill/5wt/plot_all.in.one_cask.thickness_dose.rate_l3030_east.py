@@ -158,15 +158,15 @@ legend_font=42
 # position of the annotation dependent on axis domain and range
 #
 annotate_title='L-3030'
-annotate_x=25
+annotate_x=23
 annotate_y=2700
 #
 annotate_title2='Air backfill'
-annotate_x2=25
+annotate_x2=23
 annotate_y2=1700
 #
 annotate_title3='5 wt% $^{10}B$'
-annotate_x3=25
+annotate_x3=23
 annotate_y3=900
 #
 ###
