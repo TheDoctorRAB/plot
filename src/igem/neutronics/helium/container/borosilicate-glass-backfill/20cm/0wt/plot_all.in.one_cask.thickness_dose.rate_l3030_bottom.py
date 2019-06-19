@@ -158,19 +158,19 @@ legend_font=42
 # position of the annotation dependent on axis domain and range
 #
 annotate_title='L-3030'
-annotate_x=25.5
+annotate_x=23
 annotate_y=1000
 #
-annotate_title2='Helium backfill'
-annotate_x2=25.5
+annotate_title2='Helium-Glass backfill'
+annotate_x2=23
 annotate_y2=500
 #
 annotate_title3='0 wt% $^{10}B$'
-annotate_x3=25.5
+annotate_x3=23
 annotate_y3=200
 #
 annotate_title4='20cm thick concrete'
-annotate_x4=24
+annotate_x4=23
 annotate_y4=0.02
 #
 ###
@@ -288,7 +288,7 @@ plot.savefig(title,dpi=current_dpi)
 #
 # plot to screen
 #
-plot.show()
+# plot.show()
 #
 ########################################################################
 #
