@@ -157,21 +157,21 @@ legend_font=42
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='L-3030'
+annotate_title='T-4045'
 annotate_x=23
-annotate_y=1000
+annotate_y=4000
 #
 annotate_title2='Air-Glass backfill'
 annotate_x2=23
-annotate_y2=500
+annotate_y2=2000
 #
 annotate_title3='5 wt% $^{10}B$'
 annotate_x3=23
-annotate_y3=200
+annotate_y3=800
 #
 annotate_title4='5cm thick concrete'
 annotate_x4=23
-annotate_y4=0.02
+annotate_y4=0.2
 #
 ###
 #
@@ -180,8 +180,8 @@ annotate_y4=0.02
 xmin=1
 xmax=31
 #
-ymin=0.01
-ymax=2000
+ymin=0.1
+ymax=6000
 #
 ###
 #
@@ -288,7 +288,7 @@ plot.savefig(title,dpi=current_dpi)
 #
 # plot to screen
 #
-# plot.show()
+# # plot.show()
 #
 ########################################################################
 #

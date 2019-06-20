@@ -157,17 +157,17 @@ legend_font=42
 # annotate
 # position of the annotation dependent on axis domain and range
 #
-annotate_title='L-3030'
+annotate_title='T-4045'
 annotate_x=23
-annotate_y=1000
+annotate_y=7000
 #
 annotate_title2='Water backfill'
 annotate_x2=23
-annotate_y2=400
+annotate_y2=4000
 #
 annotate_title3='0 wt% $^{10}B$'
 annotate_x3=23
-annotate_y3=200
+annotate_y3=1000
 #
 ###
 #
@@ -176,8 +176,8 @@ annotate_y3=200
 xmin=1
 xmax=31
 #
-ymin=0.1
-ymax=2200
+ymin=1
+ymax=10000
 #
 ###
 #
@@ -283,7 +283,7 @@ plot.savefig(title,dpi=current_dpi)
 #
 # plot to screen
 #
-plot.show()
+# plot.show()
 #
 ########################################################################
 #
