@@ -288,7 +288,7 @@ plot.savefig(title,dpi=current_dpi)
 #
 # plot to screen
 #
-plot.show()
+# plot.show()
 #
 ########################################################################
 #
