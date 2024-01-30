@@ -4,9 +4,11 @@
 #
 # Processing census data into histograms
 #
-# Single bar per label (city for here)
+# Single bar per label
 #
-# Data files in ../data directory
+# Data file should have label in 0 column and be \t
+#
+# Originally made for census data but rawdata is where processing starts
 #
 ########################################################################
 #
@@ -96,17 +98,17 @@ print('current DPI is %0.f' % (current_dpi))
 #
 #######
 #
-# extract string from plot_datafile
+# extract string from plot_datafile in colummn 0
 #
 census_raw_data=numpy.loadtxt(plot_datafile,dtype=str,delimiter='\t')
 city_total = numpy.shape(census_raw_data)[0] #rows
-data_total = numpy.shape(census_raw_data)[1]-2 #columns minus city name [0] and source [1]
+data_total = numpy.shape(census_raw_data)[1]-2 #columns of data minus any strings
 #
 #######
 #
 # load array with city names
 #
-cities=numpy.empty(city_total,dtype='<U15')
+cities=numpy.empty(city_total,dtype='<U15') #loads string data UNN truncates labels by NN
 #
 for i in range(0,city_total):
     cities[i]=census_raw_data[i,0]
@@ -116,7 +118,6 @@ print(cities)
 #######
 #
 # load data array
-#
 #
 census_data=numpy.zeros(shape=(city_total,data_total))
 #
@@ -153,7 +154,7 @@ fig,left_axis=plot.subplots()
 #
 #title='Population'
 #title='Employment'
-title='Median Income'
+title='Title'
 xtitle=''
 ytitle=''
 #
@@ -215,7 +216,7 @@ legend_font=28
 #
 ###
 #
-# axis domain and range
+# axis domain and range if labels are fixed
 #
 #N=12
 #r=numpy.arange(N)

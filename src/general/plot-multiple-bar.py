@@ -6,7 +6,7 @@
 #
 # Labels are months so always the same
 #
-# Bars are money per year
+# Bars are per year
 #
 ########################################################################
 #
@@ -103,10 +103,10 @@ plot_data=numpy.loadtxt(plot_datafile,dtype=float)
 #
 #######
 #
-# compute average
+# compute average of data by columns if needed
 #
 months=12
-columns=numpy.shape(plot_data)[1]-1 #columns minus 0 for month label
+columns=numpy.shape(plot_data)[1]-1 #columns minus [0] if data label present
 #
 average=numpy.zeros(shape=(months,1))
 #
