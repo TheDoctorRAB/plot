@@ -282,7 +282,7 @@ left_axis.plot(plot_data[:,2],plot_data[:,0],marker='o',color=line_color1,label=
 left_axis.plot(plot_data[:,3],plot_data[:,0],marker='o',color=line_color2,label=curve_text2,linewidth=curve_linewidth,markersize=20)
 left_axis.plot(plot_data[:,4],plot_data[:,0],marker='o',color=line_color3,label=curve_text3,linewidth=curve_linewidth,markersize=20)
 left_axis.plot(plot_data[:,5],plot_data[:,0],marker='o',color=line_color4,label=curve_text4,linewidth=curve_linewidth,markersize=20)
-#left_axis.plot(plot_data[:,6],plot_data[:,0],marker='o',color=line_color5,label=curve_text5,linewidth=curve_linewidth,markersize=20)
+left_axis.plot(plot_data[:,6],plot_data[:,0],marker='o',color=line_color5,label=curve_text5,linewidth=curve_linewidth,markersize=20)
 #left_axis.plot(plot_data[:,7],plot_data[:,0],marker='o',color=line_color6,label=curve_text6,linewidth=curve_linewidth,markersize=20)
 #left_axis.plot(plot_data[:,8],plot_data[:,0],marker='o',color=line_color7,label=curve_text7,linewidth=curve_linewidth,markersize=20)
 #left_axis.plot(plot_data[:,9],plot_data[:,0],marker='o',color=line_color8,label=curve_text8,linewidth=curve_linewidth,markersize=20)
