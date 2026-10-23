@@ -177,10 +177,6 @@ bar_text14='Economic Pressures'    #legend text
 bar_text15='Energy-Water Infrastructure'   #legend text
 bar_text16='Industrial Growth'    #legend text
 bar_text17='Residential Growth'   #legend text
-#bar_text6=''                  #legend text
-#bar_text7=''                   #legend text
-#bar_text8=''                  #legend text
-#bar_text9=''                  #legend text
 #
 legend_location='upper right' #location of legend on grid
 legend_font=24
