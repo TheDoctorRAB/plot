@@ -126,10 +126,10 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Crisp Number Topic'
+title='Unfiltered sources by keyword'
 xtitle='Stressor'
 xtitle=''
-ytitle='Crisp number'
+ytitle='Number of sources'
 #
 ###
 #
@@ -148,25 +148,20 @@ bar_color6='darkorange',
 bar_color7='black',
 bar_color8='teal',
 bar_color9='olive'
-#
-bar_color=[
-    bar_color0,
-    bar_color1,
-    bar_color2,
-    bar_color3,
-    bar_color4,
-    bar_color5,
-    bar_color6,
-    bar_color7,
-    bar_color8,
-    bar_color9
-]
+bar_color10='olive',
+bar_color11='red',
+bar_color12='blue',
+bar_color13='green',
+bar_color14='chocolate',
+bar_color15='orchid',
+bar_color16='darkorange',
+bar_color17='black',
 #
 edge_color='black' #color
 #
-bar_text0='Water knowledge level'                  #legend text
-bar_text1='Energy knowledge level'                  #legend text
-bar_text2='E-W knowledge level'                  #legend text
+bar_text0='risk-benefit logic and nuclear fuel cycle'                  #legend text
+bar_text1=''                  #legend text
+bar_text2=''                  #legend text
 #bar_text3='2022'                  #legend text
 #bar_text4='2021'                  #legend text
 #bar_text5='2020'                  #legend text
@@ -245,7 +240,7 @@ global_position=numpy.arange(stressors)
 global_position=1.0+(r-1.0)*offset
 print(global_position)
 #
-basis = ['W','E','E-W']
+basis = ['RB&NFC','','']
 #
 #######
 #
