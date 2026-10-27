@@ -126,9 +126,8 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Unfiltered sources by keyword'
-xtitle='Stressor'
-xtitle=''
+title='Unfiltered sources by keyword -- 'Risk-benefit Logic''
+xtitle='Keywords'
 ytitle='Number of sources'
 #
 ###
@@ -159,16 +158,16 @@ bar_color17='black',
 #
 edge_color='black' #color
 #
-bar_text0='risk-benefit logic and nuclear fuel cycle'                  #legend text
-bar_text1=''                  #legend text
-bar_text2=''                  #legend text
-#bar_text3='2022'                  #legend text
-#bar_text4='2021'                  #legend text
-#bar_text5='2020'                  #legend text
-#bar_text6='2019'                  #legend text
-#bar_text7='AVG'                   #legend text
-#bar_text8='2018'                  #legend text
-#bar_text9='2017'                  #legend text
+bar_text0='risk-benefit logic & nuclear fuel cycle'
+bar_text1='risk-benefit logic & nuclear waste'
+bar_text2='risk-benefit logic & HLW'
+bar_text3='risk-benefit logic & SNF'
+bar_text4='risk-benefit logic & TRU'
+bar_text5='risk-benefit logic & LLW'
+bar_text6='risk-benefit logic & critical facilities'
+bar_text7='risk-benefit logic & critical infrastructure'
+#bar_text8=''
+#bar_text9=''
 #
 legend_location='upper right' #location of legend on grid
 legend_font=24
@@ -225,7 +224,7 @@ minor_grid_tick_length=5
 #
 bar_linewidth=4.0
 bar_width=0.10
-offset=0.40
+offset=0.00
 #
 ###
 #
@@ -237,10 +236,10 @@ global_position=numpy.arange(stressors)
 #
 # position the bars
 #
-global_position=1.0+(r-1.0)*offset
+#global_position=1.0+(r-1.0)*offset
 print(global_position)
 #
-basis = ['RB&NFC','','']
+basis = ['NFC','NW','HLW','SNF','TRU','LLW','CF','CI']
 #
 #######
 #
@@ -302,7 +301,7 @@ left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
 # plot data
 #
 plot.bar(global_position[0],plot_data[0],width=bar_width,color=bar_color0,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text0)
-plot.bar(global_position[1],plot_data[1],width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)#center
+plot.bar(global_position[1],plot_data[1],width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
 plot.bar(global_position[2],plot_data[2],width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
 left_axis.legend(loc=legend_location,fontsize=legend_font,framealpha=1,shadow=True,ncol=10) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
