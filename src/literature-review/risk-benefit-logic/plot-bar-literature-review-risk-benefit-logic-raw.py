@@ -126,7 +126,7 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Unfiltered sources by keyword -- 'Risk-benefit Logic''
+title='Unfiltered sources by keyword -- 'Risk-Benefit Logic''
 xtitle='Keywords'
 ytitle='Number of sources'
 #
@@ -166,6 +166,7 @@ bar_text4='risk-benefit logic & TRU'
 bar_text5='risk-benefit logic & LLW'
 bar_text6='risk-benefit logic & critical facilities'
 bar_text7='risk-benefit logic & critical infrastructure'
+bar_text7='risk-benefit logic & utility'
 #bar_text8=''
 #bar_text9=''
 #
@@ -239,7 +240,7 @@ global_position=numpy.arange(stressors)
 #global_position=1.0+(r-1.0)*offset
 print(global_position)
 #
-basis = ['NFC','NW','HLW','SNF','TRU','LLW','CF','CI']
+basis = ['NFC','NW','HLW','SNF','TRU','LLW','CF','CI','U']
 #
 #######
 #
