@@ -28,7 +28,8 @@ from matplotlib.ticker import MultipleLocator
 # command line
 #
 from sys import argv
-script,plot_datafile=argv
+#script,plot_datafile=argv
+script=argv
 #
 #######
 #
@@ -99,7 +100,7 @@ print('current DPI is %0.f' % (current_dpi))
 # open the plot data file(s)
 # add plot_dataN for each plot_datafileN
 #
-plot_data=numpy.loadtxt(plot_datafile,dtype=float)
+#plot_data=numpy.loadtxt(plot_datafile,dtype=float)
 #
 #######
 #
@@ -126,7 +127,7 @@ fig,left_axis=plot.subplots()
 #
 # plot text
 #
-title='Unfiltered sources by keyword -- 'Risk-Benefit Logic''
+title='Filtered sources by keyword'
 xtitle='Keywords'
 ytitle='Number of sources'
 #
@@ -158,17 +159,14 @@ bar_color17='black',
 #
 edge_color='black' #color
 #
-bar_text0='risk-benefit logic & nuclear fuel cycle'
-bar_text1='risk-benefit logic & nuclear waste'
-bar_text2='risk-benefit logic & HLW'
-bar_text3='risk-benefit logic & SNF'
-bar_text4='risk-benefit logic & TRU'
-bar_text5='risk-benefit logic & LLW'
-bar_text6='risk-benefit logic & critical facilities'
-bar_text7='risk-benefit logic & critical infrastructure'
-bar_text7='risk-benefit logic & utility'
-#bar_text8=''
-#bar_text9=''
+bar_text0='risk-benefit & nuclear fuel cycle & public engagement'
+bar_text1='risk-benefit & nuclear waste & public engagement'
+bar_text2='risk-benefit & HLW & public engagement'
+bar_text3='risk-benefit & SNF & public engagement'
+bar_text4='risk-benefit & TRU & public engagement'
+bar_text5='risk-benefit & LLW & public engagement'
+bar_text6='risk-benefit & nuclear fuel cycle & utility function & public engagement'
+#bar_text7=''
 #
 legend_location='upper right' #location of legend on grid
 legend_font=24
@@ -197,17 +195,17 @@ legend_font=24
 #xmin=0.01
 #xmax=12.99
 ymin=0
-ymax=1
+ymax=100
 #
 ###
 #
 # axis ticks
 #
 #xmajortick=1
-ymajortick=0.10
+ymajortick=50
 #
 #xminortick=1
-yminortick=0.025
+yminortick=10
 #
 ###
 #
@@ -225,22 +223,21 @@ minor_grid_tick_length=5
 #
 bar_linewidth=4.0
 bar_width=0.10
-offset=0.00
+#offset=0.50
 #
 ###
 #
 # bar labels
 #
-stressors=3
-r=numpy.arange(stressors)
-global_position=numpy.arange(stressors)
+keywords=7
+r=numpy.arange(keywords)
+global_position=numpy.arange(keywords)
 #
 # position the bars
 #
 #global_position=1.0+(r-1.0)*offset
-print(global_position)
 #
-basis = ['NFC','NW','HLW','SNF','TRU','LLW','CF','CI','U']
+basis = ['NFC','NW','HLW','SNF','TRU','LLW','U']
 #
 #######
 #
@@ -301,14 +298,20 @@ left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
 #
 # plot data
 #
-plot.bar(global_position[0],plot_data[0],width=bar_width,color=bar_color0,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text0)
-plot.bar(global_position[1],plot_data[1],width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
-plot.bar(global_position[2],plot_data[2],width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
+plot.bar(global_position[0],6,width=bar_width,color=bar_color0,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text0)
+plot.bar(global_position[1],,width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
+plot.bar(global_position[2],,width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
+plot.bar(global_position[3],,width=bar_width,color=bar_color3,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text3)
+plot.bar(global_position[4],,width=bar_width,color=bar_color4,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text4)
+plot.bar(global_position[5],,width=bar_width,color=bar_color5,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text5)
+plot.bar(global_position[6],,width=bar_width,color=bar_color6,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text6)
+#plot.bar(global_position[1],plot_data[1],width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
+#plot.bar(global_position[2],plot_data[2],width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
 left_axis.legend(loc=legend_location,fontsize=legend_font,framealpha=1,shadow=True,ncol=10) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 plot.xticks(global_position,basis)
-plot.xlim(-1,3)
+#plot.xlim(-1,3)
 #
 #######
 #
