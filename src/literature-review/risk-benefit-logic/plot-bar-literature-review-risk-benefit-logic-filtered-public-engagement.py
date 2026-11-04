@@ -165,7 +165,7 @@ bar_text2='risk-benefit & HLW & public engagement'
 bar_text3='risk-benefit & SNF & public engagement'
 bar_text4='risk-benefit & TRU & public engagement'
 bar_text5='risk-benefit & LLW & public engagement'
-bar_text6='risk-benefit & nuclear fuel cycle & utility function & public engagement'
+bar_text6='risk-benefit & nuclear fuel cycle & utility function'
 #bar_text7=''
 #
 legend_location='upper right' #location of legend on grid
@@ -195,17 +195,17 @@ legend_font=24
 #xmin=0.01
 #xmax=12.99
 ymin=0
-ymax=100
+ymax=10
 #
 ###
 #
 # axis ticks
 #
 #xmajortick=1
-ymajortick=50
+ymajortick=1
 #
 #xminortick=1
-yminortick=10
+yminortick=1
 #
 ###
 #
@@ -300,14 +300,14 @@ left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
 #
 plot.bar(global_position[0],9,width=bar_width,color=bar_color0,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text0)
 plot.bar(global_position[1],8,width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
-plot.bar(global_position[2],,width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
-plot.bar(global_position[3],,width=bar_width,color=bar_color3,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text3)
-plot.bar(global_position[4],,width=bar_width,color=bar_color4,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text4)
-plot.bar(global_position[5],,width=bar_width,color=bar_color5,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text5)
-plot.bar(global_position[6],,width=bar_width,color=bar_color6,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text6)
+plot.bar(global_position[2],2,width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
+plot.bar(global_position[3],2,width=bar_width,color=bar_color3,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text3)
+plot.bar(global_position[4],1,width=bar_width,color=bar_color4,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text4)
+plot.bar(global_position[5],0,width=bar_width,color=bar_color5,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text5)
+plot.bar(global_position[6],0,width=bar_width,color=bar_color6,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text6)
 #plot.bar(global_position[1],plot_data[1],width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
 #plot.bar(global_position[2],plot_data[2],width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
-left_axis.legend(loc=legend_location,fontsize=legend_font,framealpha=1,shadow=True,ncol=10) #legend needs to be after all the plot data
+left_axis.legend(loc=legend_location,fontsize=legend_font,framealpha=1,shadow=True,ncol=1) #legend needs to be after all the plot data
 plot.get_current_fig_manager().resize(width,height)
 plot.gcf().set_size_inches((0.01*width),(0.01*height))
 plot.xticks(global_position,basis)
