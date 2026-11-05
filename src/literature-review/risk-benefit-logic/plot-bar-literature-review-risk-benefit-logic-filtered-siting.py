@@ -298,13 +298,13 @@ left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
 #
 # plot data
 #
-plot.bar(global_position[0],9,width=bar_width,color=bar_color0,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text0)
-plot.bar(global_position[1],8,width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
-plot.bar(global_position[2],2,width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
-plot.bar(global_position[3],2,width=bar_width,color=bar_color3,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text3)
-plot.bar(global_position[4],1,width=bar_width,color=bar_color4,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text4)
-plot.bar(global_position[5],0,width=bar_width,color=bar_color5,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text5)
-plot.bar(global_position[6],0,width=bar_width,color=bar_color6,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text6)
+plot.bar(global_position[0],4,width=bar_width,color=bar_color0,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text0)
+plot.bar(global_position[1],,width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
+plot.bar(global_position[2],,width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
+plot.bar(global_position[3],,width=bar_width,color=bar_color3,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text3)
+plot.bar(global_position[4],,width=bar_width,color=bar_color4,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text4)
+plot.bar(global_position[5],,width=bar_width,color=bar_color5,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text5)
+plot.bar(global_position[6],,width=bar_width,color=bar_color6,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text6)
 #plot.bar(global_position[1],plot_data[1],width=bar_width,color=bar_color1,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text1)
 #plot.bar(global_position[2],plot_data[2],width=bar_width,color=bar_color2,edgecolor=edge_color,linewidth=bar_linewidth,label=bar_text2)
 left_axis.legend(loc=legend_location,fontsize=legend_font,framealpha=1,shadow=True,ncol=1) #legend needs to be after all the plot data
