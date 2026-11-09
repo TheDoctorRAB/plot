@@ -186,7 +186,7 @@ legend_font=42
 #
 # axis domain and range
 #
-xmin=-0.01
+xmin=0.94
 xmax=5.04
 #
 ymin=-0.01
@@ -199,7 +199,7 @@ ymax=1.04
 xmajortick=1
 ymajortick=0.25
 #
-xminortick=0.20
+#xminortick=0.20
 yminortick=0.05
 #
 ###
@@ -252,7 +252,7 @@ left_axis.axis(ymin=ymin,ymax=ymax)
 # axis ticks
 #
 left_axis.xaxis.set_major_locator(MultipleLocator(xmajortick))
-left_axis.xaxis.set_minor_locator(MultipleLocator(xminortick))
+#left_axis.xaxis.set_minor_locator(MultipleLocator(xminortick))
 left_axis.yaxis.set_major_locator(MultipleLocator(ymajortick))
 left_axis.yaxis.set_minor_locator(MultipleLocator(yminortick))
 #
