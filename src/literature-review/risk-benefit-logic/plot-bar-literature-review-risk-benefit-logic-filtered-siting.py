@@ -195,7 +195,7 @@ legend_font=24
 #xmin=0.01
 #xmax=12.99
 ymin=0
-ymax=10
+ymax=10.03
 #
 ###
 #
